@@ -1,0 +1,43 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Build and run tests with Gradle
+        run: gradle build
+
+      - name: Upload build artifact (jar)
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-calculator-app-jar
+          path: build/libs/*.jar
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: build/test-results/
