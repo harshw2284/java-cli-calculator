@@ -30,14 +30,14 @@ jobs:
         run: gradle build
 
       - name: Upload build artifact (jar)
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: gradle-calculator-app-jar
           path: build/libs/*.jar
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: test-results
           path: build/test-results/
