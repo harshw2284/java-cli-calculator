@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculator.CalculatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-09-11T13:34:18.662Z" hostname="LAP" time="0.029">
+  <properties/>
+  <testcase name="testAddition()" classname="calculator.CalculatorTest" time="0.016"/>
+  <testcase name="testSubtraction()" classname="calculator.CalculatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
