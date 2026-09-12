@@ -16,13 +16,23 @@ This project serves as a practical testbed for Gradle build tool automation. It 
 
 ---
 
-## 🛠️ Requirements & Tech Stack
+## 🛠️ Requirements 
 
 - **Java Development Kit (JDK):** Version 17 or higher
 - **Build Tool:** Gradle (or Gradle Wrapper)
 - **External Dependencies:**
   - [Google Gson](https://github.com/google/gson) `2.10.1` — JSON serialization
   - [JUnit 5](https://junit.org/junit5/) `5.10.0` — Unit testing framework
+
+## 🛠️ Tech Stack
+ 
+| Component | Technology | Version |
+|---|---|---|
+| Language | Java (JDK) | 17+ |
+| Build Tool | Gradle (Groovy DSL) | Wrapper-managed |
+| JSON Serialization | [Google Gson](https://github.com/google/gson) | 2.10.1 |
+| Testing Framework | [JUnit 5 (Jupiter)](https://junit.org/junit5/) | 5.10.0 |
+| Test Launcher | JUnit Platform | 1.10.0 |
 
 ---
 
@@ -45,3 +55,63 @@ cli-calculator/
         └── java/
             └── calculator/
                 └── CalculatorTest.java# JUnit 5 unit tests
+```
+
+## ⚙️ How It Works
+ 
+| Class | Responsibility |
+|---|---|
+| `App.java` | Entry point of the application (`calculator.App`); drives the interactive CLI loop and reads user input. |
+| `Calculator.java` | Core arithmetic and history-tracking logic; handles JSON export of history via Gson. |
+| `Calculation.java` | A simple data model (POJO) representing one calculation record stored in history. |
+| `CalculatorTest.java` | JUnit 5 test suite validating calculator behavior. |
+ 
+## 🚀 Getting Started
+ 
+### Prerequisites
+ 
+- **JDK 17 or higher** installed and available on your `PATH`
+- No local Gradle installation required — this project uses the **Gradle Wrapper** (`gradlew` / `gradlew.bat`)
+- 
+### Clone the Repository
+ 
+```bash
+git clone https://github.com/<your-username>/cli-calculator.git
+cd cli-calculator
+```
+ 
+### Build the Project
+ 
+Compiles the source, runs all tests, and packages the application:
+ 
+```bash
+gradle build
+```
+  
+### Run the Application
+ 
+Launches the interactive CLI calculator:
+ 
+```bash
+gradlew run
+```
+ 
+### Run the Tests
+ 
+Executes the JUnit 5 test suite on its own:
+ 
+```bash
+gradle test
+```
+ 
+## 📋 Gradle Tasks Reference
+ 
+| Command | Description |
+|---|---|
+| `./gradle build` | Full build — compiles, tests, and packages the app. |
+| `./gradle run` | Runs the calculator interactively (stdin is wired to the console). |
+| `./gradle test` | Runs the JUnit 5 test suite via the JUnit Platform. |
+| `./gradlew jar` | Packages compiled classes into a runnable `.jar`. |
+| `./gradlew clean` | Deletes the `build/` output directory. |
+| `./gradlew clean build` | Fresh build from scratch. |
+
