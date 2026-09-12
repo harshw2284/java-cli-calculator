@@ -1,4 +1,4 @@
-# CLI Calculator
+# CLI Calculator [![Java CI with Gradle](https://github.com/harshw2284/java-cli-calculator/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/harshw2284/java-cli-calculator/actions/workflows/gradle-build.yml)
 
 A lightweight, console-based Java application built to demonstrate core Gradle concepts including dependency management, multi-task execution, unit testing with JUnit 5, and build artifact generation.
 
